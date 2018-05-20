@@ -12,8 +12,8 @@ def book_add():
     if request.method == 'POST':
         bookName = request.form.get('bookName')
         authorName = request.form.get('authorName')
-        with open('user.csv', 'a', encoding='utf-8') as f:
-            f.write(bookName + ',' + authorName)
+        with open('user.csv', 'a+', encoding='utf-8') as f:
+            f.write(bookName + ',' + authorName + '\n')
         return redirect(url_for('book_list'))
     else:
         return render_template('book_add.html')
