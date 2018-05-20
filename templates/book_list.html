@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+           <td>书名</td>
+           <td>作者</td>
+            <td>操作</td>
+    </tr>
+    {%  for item in booklist %}
+       <tr>
+           <td>{{ item.bookName }}</td>
+           <td>{{ item.authorName }}</td>
+           <td><a href="/book/edit?bookName={{ item.bookName }}">修改</a></td>
+       </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
